@@ -50,8 +50,13 @@ CUDA_tester::CUDA_tester(QWidget *parent) : QMainWindow(parent) {
 
 		// Global memory
 		ui.textEdit->append(QString("  Total amount of global memory: ") +
-			QString::number(static_cast<float>(deviceProp.totalGlobalMem / (1 << 20)))
+			QString::number(static_cast<float>(deviceProp.totalGlobalMem / (1 << 20))) + " MB"
 		);
+
+		// L2 memory
+		if (deviceProp.l2CacheSize) {
+			ui.textEdit->append(QString("  L2 Cache Size:") + QString::number(deviceProp.l2CacheSize / (1 << 20)) + " MB");
+		}
 
 		// Number of multi-processors and cores per multi-processor
 		ui.textEdit->append(QString("  ") +
