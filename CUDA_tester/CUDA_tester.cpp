@@ -88,6 +88,10 @@ CUDA_tester::CUDA_tester(QWidget *parent) : QMainWindow(parent) {
 	}
 }
 
+void CUDA_tester::on_pushButtonEditImage_clicked() {
+	imageEditor->editImage();
+}
+
 void CUDA_tester::on_pushButtonSelectImage_clicked() {
 	imageEditor->selectImage();
 }

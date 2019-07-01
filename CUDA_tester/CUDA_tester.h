@@ -19,6 +19,7 @@ private:
 	std::unique_ptr<ImageEditor> imageEditor;
 
 private slots:
+	void on_pushButtonEditImage_clicked();
 	void on_pushButtonSelectImage_clicked();
 	void on_pushButtonClose_clicked();
 };

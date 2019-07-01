@@ -40,4 +40,12 @@
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ImageEditor.cuh">
+      <Filter>h</Filter>
+    </None>
+    <None Include="ImageEditor.cu">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
 </Project>

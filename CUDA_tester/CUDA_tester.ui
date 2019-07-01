@@ -37,7 +37,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -63,7 +63,7 @@
      </attribute>
      <widget class="QLabel" name="labelOriginalImage">
       <property name="enabled">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="geometry">
        <rect>
@@ -79,7 +79,7 @@
      </widget>
      <widget class="QLabel" name="labelEditedImage">
       <property name="enabled">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="geometry">
        <rect>
@@ -104,6 +104,32 @@
       </property>
       <property name="text">
        <string>Select Image</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButtonMonoChrome">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>50</y>
+        <width>82</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Monochrome</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonEditImage">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Edit Image</string>
       </property>
      </widget>
     </widget>
