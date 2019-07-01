@@ -8,6 +8,8 @@
 CUDA_tester::CUDA_tester(QWidget *parent) : QMainWindow(parent) {
 	ui.setupUi(this);
 
+	imageEditor = std::make_unique<ImageEditor>(std::unique_ptr<QLabel>(ui.labelOriginalImage), std::unique_ptr<QLabel>(ui.labelEditedImage));
+
 	// Check number of CUDA devices
 	int deviceCount = 0;
 	cudaError_t error_id = cudaGetDeviceCount(&deviceCount);
@@ -86,6 +88,9 @@ CUDA_tester::CUDA_tester(QWidget *parent) : QMainWindow(parent) {
 	}
 }
 
+void CUDA_tester::on_pushButtonSelectImage_clicked() {
+	imageEditor->selectImage();
+}
 
 void CUDA_tester::on_pushButtonClose_clicked() {
 	exit(0);

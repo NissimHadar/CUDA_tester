@@ -6,32 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>1014</width>
+    <height>531</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>CUDA_tester</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>581</width>
-      <height>241</height>
-     </rect>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButtonClose">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>300</y>
+      <x>500</x>
+      <y>450</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -40,13 +27,94 @@
      <string>Close</string>
     </property>
    </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>1041</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>GPU capabilities</string>
+     </attribute>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>951</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Image Editor</string>
+     </attribute>
+     <widget class="QLabel" name="labelOriginalImage">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>384</width>
+        <height>216</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>original</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelEditedImage">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>60</y>
+        <width>384</width>
+        <height>216</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>edited</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonSelectImage">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Image</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>1014</width>
      <height>21</height>
     </rect>
    </property>
