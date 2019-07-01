@@ -1,17 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="CUDA_tester.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="ImageEditor.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <QtRcc Include="CUDA_tester.qrc" />
   </ItemGroup>
   <ItemGroup>
@@ -26,26 +15,43 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="CUDA_tester.ui">
-      <Filter>ui</Filter>
-    </QtUic>
+    <None Include="Headers\CUDAImageEditor.cuh">
+      <Filter>h</Filter>
+    </None>
+    <None Include="Source\CUDAImageEditor.cu">
+      <Filter>src</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="CUDA_tester.h">
+    <QtMoc Include="Headers\CUDA_tester.h">
       <Filter>h</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ImageEditor.h">
+    <ClInclude Include="Headers\helper_cuda.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\helper_string.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\ImageEditor.h">
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ImageEditor.cuh">
-      <Filter>h</Filter>
-    </None>
-    <None Include="ImageEditor.cu">
+    <ClCompile Include="Source\CUDA_tester.cpp">
       <Filter>src</Filter>
-    </None>
+    </ClCompile>
+    <ClCompile Include="Source\ImageEditor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="UI\CUDA_tester.ui">
+      <Filter>ui</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

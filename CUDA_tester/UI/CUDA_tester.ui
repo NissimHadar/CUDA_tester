@@ -63,7 +63,7 @@
      </attribute>
      <widget class="QLabel" name="labelOriginalImage">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="geometry">
        <rect>
@@ -79,7 +79,7 @@
      </widget>
      <widget class="QLabel" name="labelEditedImage">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="geometry">
        <rect>
@@ -117,6 +117,9 @@
       </property>
       <property name="text">
        <string>Monochrome</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButtonEditImage">
@@ -157,7 +160,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="CUDA_tester.qrc"/>
+  <include location="../CUDA_tester.qrc"/>
  </resources>
  <connections/>
 </ui>

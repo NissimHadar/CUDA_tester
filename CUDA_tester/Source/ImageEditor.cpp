@@ -1,5 +1,5 @@
 #include "ImageEditor.h"
-#include "ImageEditor.cuh"
+#include "CUDAImageEditor.cuh"
 
 #include <QFileDialog>
 #include <QMessageBox>
