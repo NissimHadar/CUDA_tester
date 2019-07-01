@@ -15,14 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Headers\CUDAImageEditor.cuh">
-      <Filter>h</Filter>
-    </None>
-    <None Include="Source\CUDAImageEditor.cu">
-      <Filter>src</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <QtMoc Include="Headers\CUDA_tester.h">
       <Filter>h</Filter>
     </QtMoc>
@@ -53,5 +45,15 @@
     <QtUic Include="UI\CUDA_tester.ui">
       <Filter>ui</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Headers\CUDAImageEditor.cuh">
+      <Filter>h</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="Source\CUDAImageEditor.cu">
+      <Filter>src</Filter>
+    </CudaCompile>
   </ItemGroup>
 </Project>

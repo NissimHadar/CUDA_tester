@@ -45,7 +45,9 @@
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
     <Import Project="$(QtMsBuild)\qt.props" />
   </ImportGroup>
-  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.1.props" />
+  </ImportGroup>
   <ImportGroup Label="Shared" />
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -121,10 +123,6 @@
     <QtRcc Include="CUDA_tester.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Headers\CUDAImageEditor.cuh" />
-    <None Include="Source\CUDAImageEditor.cu" />
-  </ItemGroup>
-  <ItemGroup>
     <QtMoc Include="Headers\CUDA_tester.h" />
   </ItemGroup>
   <ItemGroup>
@@ -140,11 +138,18 @@
   <ItemGroup>
     <QtUic Include="UI\CUDA_tester.ui" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Headers\CUDAImageEditor.cuh" />
+    <CudaCompile Include="Source\CUDAImageEditor.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />
   </ImportGroup>
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.1.targets" />
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
