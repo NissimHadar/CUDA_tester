@@ -63,7 +63,7 @@
      </attribute>
      <widget class="QLabel" name="labelOriginalImage">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="geometry">
        <rect>
@@ -79,7 +79,7 @@
      </widget>
      <widget class="QLabel" name="labelEditedImage">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="geometry">
        <rect>

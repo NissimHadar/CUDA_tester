@@ -25,4 +25,5 @@ void ImageEditor::selectImage() {
 
 	QPixmap imagePixmap = QPixmap(filename);
 	originalImage->setPixmap(imagePixmap);
+	editedImage->setPixmap(imagePixmap);
 }
