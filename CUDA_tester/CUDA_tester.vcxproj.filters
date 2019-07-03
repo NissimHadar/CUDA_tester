@@ -1,59 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <QtRcc Include="CUDA_tester.qrc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="src">
-      <UniqueIdentifier>{a3761509-c122-4ae7-928a-ad8d6c76dc0a}</UniqueIdentifier>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="ui">
-      <UniqueIdentifier>{d17c75bc-b2d0-478a-b246-6079c3bce276}</UniqueIdentifier>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="h">
-      <UniqueIdentifier>{04dad3e3-837e-47b1-9b77-30182e18f257}</UniqueIdentifier>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Headers\CUDA_tester.h">
-      <Filter>h</Filter>
+      <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\CUDAImageEditor.cuh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Headers\helper_cuda.h">
-      <Filter>h</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\helper_string.h">
-      <Filter>h</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\ImageEditor.h">
-      <Filter>h</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\CUDA_tester.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="Sources\CUDA_tester.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ImageEditor.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="Sources\ImageEditor.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\main.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="Sources\main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="UI\CUDA_tester.ui">
-      <Filter>ui</Filter>
+    <CudaCompile Include="Sources\CUDAImageEditor.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Form Files\CUDA_tester.ui">
+      <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Headers\CUDAImageEditor.cuh">
-      <Filter>h</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <CudaCompile Include="Source\CUDAImageEditor.cu">
-      <Filter>src</Filter>
-    </CudaCompile>
+    <QtRcc Include="Resources\CUDA_tester.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
 </Project>
