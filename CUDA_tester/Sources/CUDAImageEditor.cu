@@ -12,9 +12,12 @@ void removeBlue(const unsigned int width, const unsigned char* const inputPixels
 
 	unsigned int byteIndex = 3 * (x + width * y);
 
-	outputPixels[byteIndex + 0] = inputPixels[byteIndex + 0];
-	outputPixels[byteIndex + 1] = inputPixels[byteIndex + 1];
-	outputPixels[byteIndex + 2] = 0;
+	// Use weighted values
+	int colour = (0.2125 * inputPixels[byteIndex + 0]) + (0.7154 * inputPixels[byteIndex + 1]) + (0.0721 * inputPixels[byteIndex + 2]);
+
+	outputPixels[byteIndex + 0] = colour;
+	outputPixels[byteIndex + 1] = colour;
+	outputPixels[byteIndex + 2] = colour;
 }
 
 void CUDAImageEditor::convertToMonochrome(const unsigned int height, const unsigned int width, const unsigned char* const h_inputPixels, unsigned char* const h_outputPixels) {
