@@ -3,6 +3,40 @@
 
 #include "CUDAImageEditor.cuh"
 
-void CUDAImageEditor::convertToMonochrome(unsigned char* originalImagePixels) {
 
+__global__
+void removeBlue(const unsigned int width, const unsigned char* const inputPixels, unsigned char* const outputPixels) {
+	// Set third byte to 0
+	unsigned int x = (blockIdx.x * blockDim.x) + threadIdx.x;
+	unsigned int y = (blockIdx.y * blockDim.y) + threadIdx.y;
+
+	unsigned int byteIndex = 3 * (x + width * y);
+
+	outputPixels[byteIndex + 0] = inputPixels[byteIndex + 0];
+	outputPixels[byteIndex + 1] = inputPixels[byteIndex + 1];
+	outputPixels[byteIndex + 2] = 0;
+}
+
+void CUDAImageEditor::convertToMonochrome(const unsigned int height, const unsigned int width, const unsigned char* const h_inputPixels, unsigned char* const h_outputPixels) {
+	const unsigned int BUFFER_SIZE{ height * width * 3 };
+
+	// Put pixel buffer in device memory
+	unsigned char* d_inputPixels;
+	unsigned char* d_outputPixels;
+	cudaMalloc(&d_inputPixels, BUFFER_SIZE);
+	cudaMalloc(&d_outputPixels, BUFFER_SIZE);
+
+	cudaMemcpy(d_inputPixels, h_inputPixels, BUFFER_SIZE, cudaMemcpyHostToDevice);
+
+	// Blocks will be 8x8 threads
+	dim3 threadsPerBlock(8, 8);
+
+	dim3 numBlocks(width / threadsPerBlock.x, height / threadsPerBlock.y);
+
+	removeBlue<<< numBlocks, threadsPerBlock >>>(width, d_inputPixels, d_outputPixels);
+
+	cudaMemcpy((void *)h_outputPixels, d_outputPixels, BUFFER_SIZE, cudaMemcpyDeviceToHost);
+
+	cudaFree(d_inputPixels);
+	cudaFree(d_outputPixels);
 }

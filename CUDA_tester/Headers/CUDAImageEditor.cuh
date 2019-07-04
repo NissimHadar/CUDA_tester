@@ -3,7 +3,7 @@
 
 class CUDAImageEditor {
 public:
-	void convertToMonochrome(unsigned char* originalImagePixels);
+	void convertToMonochrome(const unsigned int height, const unsigned int width, const unsigned char* const h_inputPixels, unsigned char* const h_outputPixels);
 };
 
 #endif
